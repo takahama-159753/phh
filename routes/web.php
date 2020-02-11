@@ -31,4 +31,4 @@ Route::get('admin/news/create', 'Admin\AAAController@bbb');
 //add Action に、admin/profile/edit にアクセスしたら ProfileController の edit Action に割り当てるように設定してください。
 
 Route::get('admin/profile/create','Admin\ProfileController@add');
-Route::get('admin/news/create', "admin/profile/edit" );
+Route::get('admin/profile/edit', 'Admin\ProfileController@edit');
