@@ -11,9 +11,25 @@
 |
 */
 
+
+//【応用】11章で /admin/profile/create にアクセスしたら ProfileController の add Action に割り当てるように設定しました。 
+//ログインしていない状態で /admin/profile/create にアクセスした場合にログイン画面にリダイレクトされるように設定しましょう。
+
+
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('news/create', 'Admin\NewsController@add');
+    Route::get('/admin/profile/create', 'Admin\NewsController@add')->middleware('auth');
 });
+
+
+//【応用】同様に 11章で /admin/profile/edit にアクセスしたら ProfileController の edit Action に割り当てるように設定しました。 
+//ログインしていない状態で /admin/profile/edit にアクセスした場合にログイン画面にリダイレクトされるように設定しましょう。
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('admin/profile/edit', 'Admin\ProfileController@edit');
+});
+
+
+
 
 
 //URLとControllerやActionを紐付ける機能を何といいますか？
@@ -32,3 +48,6 @@ Route::get('admin/news/create', 'Admin\AAAController@bbb');
 
 Route::get('admin/profile/create','Admin\ProfileController@add');
 Route::get('admin/profile/edit', 'Admin\ProfileController@edit');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
