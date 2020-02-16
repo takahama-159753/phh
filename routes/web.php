@@ -51,3 +51,19 @@ Route::get('admin/profile/edit', 'Admin\ProfileController@edit');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
+
+//routes/web.php ファイルを次のように編集します
+
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+     Route::get('news/create', 'Admin\NewsController@add');
+     Route::post('news/create', 'Admin\NewsController@create'); # 追記
+});
+
+
+
