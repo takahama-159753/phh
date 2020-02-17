@@ -67,3 +67,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
 
 
+//【応用】 routes/web.php を編集して、 admin/profile/create に postメソッドでアクセスしたら ProfileController の create Action に割り当てるように設定してください
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+     Route::get('news/create', 'Admin\ProfileController@add');
+     Route::post('admin/profile/create', 'Admin\ ProfileController@create'); # 追記
+});
+
+//【応用】 routes/web.php を編集して、 admin/profile/edit に postメソッドでアクセスしたら ProfileController の update Action に割り当てるように設定してください。
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+     Route::post('admin/profile/edit', 'Admin\ ProfileController@update');
+    
+});

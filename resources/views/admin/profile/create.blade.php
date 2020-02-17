@@ -34,3 +34,23 @@
         </div>
     </div>
 @endsection
+
+
+//【応用】 resources/views/admin/profile/create.blade.php を編集して、氏名(name)、性別(gender)、趣味(hobby)、自己紹介欄(introduction)を入力するフォームを作成してください。
+//また、formの送信先(<form action=”この部分”>)を、 Admin\ProfileController の create Action に指定してください。(ヒント: resources/views/admin/news/create.blade.php)
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+      <title>課題13</title>
+</head>
+    <h1>name</h1>
+    <h1>gender</h1>
+    <h1>hobby</h1>
+    <h1>(introduction</h1>
+    </body>
+</html>
+
